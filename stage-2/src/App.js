@@ -5,7 +5,7 @@ import ShoppingCart from "./Components/ShoppingCart/ShoppingCart";
 import NavBar from "./Components/NavBar/NavBar";
 
 class App extends Component {
-  constuctor(props) {
+  constructor(props) {
     super(props);
     this.state = {
       products: [],
@@ -57,7 +57,7 @@ class App extends Component {
           {showCart ? (
             <ShoppingCart cart={cart} removeFromCart={this.removeFromCart} />
           ) : (
-            <StoreFront products={products} addToCart={this.addToCart} />
+            <StoreFront products={this.state.products} addToCart={this.addToCart}/>
           )}
         </div>
       </div>
