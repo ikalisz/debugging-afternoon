@@ -3,12 +3,14 @@ import "./ShoppingCart.css";
 
 class ShoppingCart extends Component {
   render() {
+    console.log(this.props.shoppingCart)
     let shoppingCartDisplay = this.props.shoppingCart.map((element, index) => {
+      console.log(element)
       return (
         <div className="shopping-cart-product-container" key={index}>
           <img src={element.image} alt="" />
           <div className="shopping-cart-info">
-            <h2>{element}</h2>
+            <h2>{element.desc}</h2>
             <h2>{"$" + element.price + ".00"}</h2>
             <div className="shopping-cart-button-container">
               <button
@@ -22,6 +24,7 @@ class ShoppingCart extends Component {
         </div>
       );
     });
+    console.log(shoppingCartDisplay)
     return (
       <div className="shopping-cart-container">
         {shoppingCartDisplay[0] ? (
